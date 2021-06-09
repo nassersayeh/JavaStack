@@ -1,4 +1,4 @@
-public class BasicJava {
+public class PuzzleJava {
 public static void main(String [] args){
         printOneToNumber(255);
         printOdd(255);

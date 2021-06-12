@@ -9,5 +9,8 @@ public void steal(Human h) {
 	int stealhealth = other_human_health -= stealth;
 	h.setHealth(stealhealth);
 }
+public void runAway() {
+	this.health-=10;
+}
 
 }

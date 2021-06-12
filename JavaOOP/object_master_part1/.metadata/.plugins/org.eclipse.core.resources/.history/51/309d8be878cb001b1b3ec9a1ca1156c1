@@ -1,0 +1,23 @@
+
+public class Samurai extends Human{
+	int health = 200;
+	int counter = 0;
+Samurai(){
+	super();
+	counter+=1;
+}
+public void deathBlow(Human h) {
+	int healthtoDecrise = h.getHealth();
+	healthtoDecrise = 0;
+	h.setHealth(healthtoDecrise);
+	this.health/=2;
+}
+public void meditate() {
+	this.health = 200;
+}
+public int howMany() {
+	
+	return counter;
+}
+
+}

@@ -1,0 +1,11 @@
+
+public class Samurai extends Human{
+	int health = 200;
+public void deathBlow(Human h) {
+	int healthtoDecrise = h.getHealth();
+	healthtoDecrise = 0;
+	h.setHealth(healthtoDecrise);
+	health/=2;
+}
+
+}

@@ -1,0 +1,19 @@
+public class Bat extends Mammal{
+	public Bat() {
+		super();
+		this.energy = 300;
+	}
+public void fly() {
+	
+	System.out.println("the sound a bat taking off !");
+	energy-=energy;
+	
+	
+}
+public void eatHumans() {
+	
+}
+public void attackTown() {
+	
+}
+}

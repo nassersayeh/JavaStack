@@ -1,0 +1,8 @@
+
+public class Specimen extends Mammal{
+	public Specimen() {
+		super();
+		this.energy = 300;
+	}
+
+}

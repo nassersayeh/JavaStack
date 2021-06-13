@@ -91,3 +91,15 @@ java.net.SocketException: Socket closed
 	at org.eclipse.jdi.internal.connect.SocketListeningConnectorImpl.accept(SocketListeningConnectorImpl.java:167)
 	at org.eclipse.jdt.internal.launching.StandardVMDebugger$ConnectRunnable.run(StandardVMDebugger.java:114)
 	at java.base/java.lang.Thread.run(Thread.java:832)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-13 09:09:38.611
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.txyFkolP
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-13 09:09:38.720
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.txyFkolP
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-13 09:09:38.724
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-13 09:09:38.729
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.txyFkolP => OK

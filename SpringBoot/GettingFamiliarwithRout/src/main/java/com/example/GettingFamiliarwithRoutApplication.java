@@ -41,9 +41,7 @@ public class GettingFamiliarwithRoutApplication {
     public String DojoController3(@PathVariable("track") String track){
 		String[] s = track.split("-");
 		String one = s[0].substring(0,1).toUpperCase();
-		String two = s[0].substring(1);
 		String one1 = s[1].substring(0,1).toUpperCase();
-		String two1 = s[1].substring(1);
 		
     	return  one+one1+" Dojo is headquarters" ;
     }

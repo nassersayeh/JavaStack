@@ -22,7 +22,12 @@ public List<Dojo> alldojos(){
 public List<Ninja> allninja(){
 	return ninjarepo.findAll();
 }
-
+public Dojo creatDojo(Dojo d) {
+	return dojorepo.save(d);
+}
+public Ninja creatNinja(Ninja n) {
+	return ninjarepo.save(n);
+}
 
 
 }

@@ -14,13 +14,12 @@
 <form:form action="/creatninja" method="post" modelAttribute="ninja">
 			<p>
 			<form:label path="dojo">Dojo</form:label>
-			<form:errors path="dojo" />
-			<form:select path="dojo" >
+			<form:errors path="dojo"/>
+			<form:select path="dojo">
 			<c:forEach items="${x}" var="dojo">
-			<form:option value="${dojo.getId()}" >${dojo.name}</form:option>
+			<form:option value="${dojo.getId()}">${dojo.name}</form:option>
 			</c:forEach>
 			</form:select>
-			 
 		</p>
 		<p>
 			<form:label path="firstName">First Name</form:label>

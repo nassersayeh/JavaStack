@@ -11,6 +11,6 @@ import com.example.dojosandninjas.models.Ninja;
 public interface Ninjas extends CrudRepository<Ninja,Long> {
 	
 	List<Ninja> findAll();
-	
+	List <Ninja> findAllByDojo(Dojo x);
 
 }

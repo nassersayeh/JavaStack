@@ -16,7 +16,9 @@
 			<form:label path="dojo">Dojo</form:label>
 			<form:errors path="dojo" />
 			<form:select path="dojo" >
-			<form:options ></form:options>
+			<c:forEach items="${x}" var="dojo">
+			<form:option value="${dojo.getId()}" >${dojo.name}</form:option>
+			</c:forEach>
 			</form:select>
 			 
 		</p>

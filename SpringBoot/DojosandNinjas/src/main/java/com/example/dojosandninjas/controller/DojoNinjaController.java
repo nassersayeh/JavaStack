@@ -1,12 +1,15 @@
 package com.example.dojosandninjas.controller;
 
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.dojosandninjas.models.Dojo;
@@ -38,8 +41,9 @@ public String creatdojo(@Valid @ModelAttribute("dojo") Dojo dojo , BindingResult
 
 
 @RequestMapping("/ninja/new")
-public String showninja(@ModelAttribute("ninja")Ninja ninja ) {
-	
+public String showninja(@ModelAttribute("ninja")Ninja ninja , Model model ) {
+	List <Dojo> x=djservices.findAllDojos();
+	model.addAttribute("x",x);
 	return "ninjapage.jsp";
 }
 
@@ -48,7 +52,17 @@ public String creatninja(@Valid @ModelAttribute("ninja") Ninja ninja , BindingRe
 	if(result.hasErrors()) {
 		return "ninjapage.jsp";
 	}
+	
 	Ninja n = djservices.creatNinja(ninja);
 	return "redirect:/ninja/new";
+}
+
+@RequestMapping("/dojos/{id}")
+public String show(@PathVariable("id") long id,Model model) {
+	Dojo x=djservices.findDojoById(id);
+	List <Ninja> xg=djservices.findAllByDojo(x);
+	model.addAttribute("x",x);
+	model.addAttribute("xg",xg);
+	return "/dojos.jsp";
 }
 }

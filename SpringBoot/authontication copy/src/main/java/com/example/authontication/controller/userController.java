@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.authontication.model.User;
 import com.example.authontication.services.UserService;
-import com.example.authontication.validator.UserValidator;
 
 
 // imports removed for brevity
@@ -22,10 +21,8 @@ import com.example.authontication.validator.UserValidator;
 public class userController {
     private final UserService userService;
     
-    public userController(UserService userService, UserValidator userValidator) {
+    public userController(UserService userService) {
         this.userService = userService;
-        this.userValidator = userValidator;
-
     }
     
     @RequestMapping("/registration")
@@ -36,24 +33,18 @@ public class userController {
     public String login() {
         return "loginPage.jsp";
     }
-private final UserValidator userValidator;
     
-   
     @RequestMapping(value="/registration", method=RequestMethod.POST)
     public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
         // if result has errors, return the registration page (don't worry about validations just now)
         // else, save the user in the database, save the user id in session, and redirect them to the /home route
-    	userValidator.validate(user, result);
-        if(result.hasErrors()) {
-            return "registrationPage.jsp";
-        }
     	if(user.getPasswordConfirmation().equals(user.getPassword())) {
             userService.registerUser(user);
             session.setAttribute("user.id", user.getId());
             return "redirect:/home";
         	}
     	else
-    		return "redirect:/registration";
+    		return "redirect:/registeration";
     }
     
     @RequestMapping(value="/login", method=RequestMethod.POST)
@@ -63,7 +54,7 @@ private final UserValidator userValidator;
     	if(userService.authenticateUser(email, password)==true) {
     		User user=userService.findByEmail(email);
     		session.setAttribute("user.id", user.getId());
-    		return "redirect:/events";
+    		return "redirect:/home";
     		
     	}
     	else {
